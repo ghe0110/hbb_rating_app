@@ -1,25 +1,9 @@
 <!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Koshien Rating</title>
-<link rel="stylesheet" href="./src/app.css">
-</head>
-<body>
-<header><div class="container"><h1>Koshien Rating</h1><p>全国高校野球 Rating Database</p></div></header>
-<main class="container">
-<div class="tabs">
-<button class="tab">Current</button>
-<button class="tab">Historical</button>
-<button class="tab">Live</button>
-</div>
-<section>
-<h2>Ranking</h2>
-<p>データを追加すると自動生成されたTOP150を表示します。</p>
-<div id="ranking"></div>
-</section>
-</main>
-<script src="./src/app.js"></script>
-</body>
-</html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koshien Rating</title><link rel="stylesheet" href="src/app.css"></head>
+<body><main><header><h1>Koshien Rating</h1><p>高校野球レーティング β</p></header>
+<nav><button data-mode="current">Current</button><button data-mode="historical">Historical</button><button data-mode="live">Live</button></nav>
+<div class="toolbar"><select id="factor"><option value="rating">総合</option><option value="win_rate">勝率</option><option value="run_diff">得失点</option><option value="inning_stability">イニング安定性</option><option value="participation">出場実績</option><option value="advancement">上位進出</option><option value="coach_continuity">監督継続</option></select>
+<select id="page"><option value="0">1–50位</option><option value="1">51–100位</option><option value="2">101–150位</option></select></div>
+<p id="status"></p><table><thead><tr><th>順位</th><th>高校</th><th>Score</th><th>勝率</th><th>得失点/試合</th><th>安定性</th></tr></thead><tbody id="rows"></tbody></table></main>
+<script src="src/app.js"></script></body></html>

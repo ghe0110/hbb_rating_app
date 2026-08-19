@@ -1,11 +1,16 @@
-# 2026 Spring verified additional data v1.2
+# Koshien Rating Engine v2.0
 
-第98回選抜高等学校野球大会の全31試合を収録。
+GitHubに登録して「データを追加 → 計算 → JSON更新 → Pages表示」まで動かすためのエンジンです。
 
-- tournament_entries.csv
-- games.csv
-- inning_scores.csv
-- team_aggregate.csv
+## 最短手順
 
-一次ソース：日本高等学校野球連盟（JHBF）公式試合結果ページ。
-未確認値は補間していません。
+```bash
+python scripts/validate.py
+python scripts/build_rating.py
+```
+
+その後、生成されたJSONをGitHubへpushしてください。
+
+## 注意
+このv2.0は「計算が実際に動くこと」を優先した透明なベースモデルです。
+今後、歴代データを増やしながら重み・補正・監督継続率・Live計算を精緻化できます。
